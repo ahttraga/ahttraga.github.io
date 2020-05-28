@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-05-28 Thu 16:47 -->
+<!-- 2020-05-28 Thu 17:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Euler Problems in <code>J</code></title>
@@ -269,71 +269,71 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2f81a7c">1. Introduction</a>
+<li><a href="#org4d2c3bb">1. Introduction</a>
 <ul>
-<li><a href="#orgd4fb02b">1.1. References</a>
+<li><a href="#org01904fe">1.1. References</a>
 <ul>
-<li><a href="#org1b08acc">1.1.1. General J</a></li>
-<li><a href="#orgaf8fdb7">1.1.2. Errors</a></li>
+<li><a href="#orgcfd1cc8">1.1.1. General J</a></li>
+<li><a href="#orga98d0b7">1.1.2. Errors</a></li>
 </ul>
 </li>
-<li><a href="#orgd048cfd">1.2. Miscellaneous</a></li>
+<li><a href="#orge46519c">1.2. Miscellaneous</a></li>
 </ul>
 </li>
-<li><a href="#orgf0f2f64">2. Problem 1: Multiples of 3 and 5</a>
+<li><a href="#org56c0915">2. Problem 1: Multiples of 3 and 5</a>
 <ul>
-<li><a href="#orge4ba9ad">2.1. Process</a>
+<li><a href="#org9f212b0">2.1. Process</a>
 <ul>
-<li><a href="#orge573df0">2.1.1. Found out how to filter a list in J.</a></li>
-<li><a href="#orgd22087a">2.1.2. Alternative filter</a></li>
-<li><a href="#org08ebda6">2.1.3. Strategy 1</a></li>
-<li><a href="#org72b5dec">2.1.4. Strategy 2</a></li>
+<li><a href="#org474efa2">2.1.1. Found out how to filter a list in J.</a></li>
+<li><a href="#org159ff83">2.1.2. Alternative filter</a></li>
+<li><a href="#org83b19eb">2.1.3. Strategy 1</a></li>
+<li><a href="#orga641a38">2.1.4. Strategy 2</a></li>
 </ul>
 </li>
-<li><a href="#orgfa1e224">2.2. Solutions</a>
+<li><a href="#org9c8d47b">2.2. Solutions</a>
 <ul>
-<li><a href="#org74d5bd6">2.2.1. Mine</a></li>
-<li><a href="#orga0be76b">2.2.2. Rutledge</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org4d70d01">3. Problem 2: Even Fibonacci numbers</a>
-<ul>
-<li><a href="#orgcdf726e">3.1. Process</a></li>
-<li><a href="#org7cc2a59">3.2. Solutions</a>
-<ul>
-<li><a href="#org96fd3dc">3.2.1. Mine</a></li>
-<li><a href="#orgd054f2f">3.2.2. Rutledge 2</a></li>
+<li><a href="#org51b3ad4">2.2.1. Mine</a></li>
+<li><a href="#org29b1c1f">2.2.2. Rutledge</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga4a758b">4. Problem 3: Largest prime factor</a>
+<li><a href="#org9d67cfc">3. Problem 2: Even Fibonacci numbers</a>
 <ul>
-<li><a href="#org7750580">4.1. Solution</a></li>
+<li><a href="#org855706b">3.1. Process</a></li>
+<li><a href="#org19a0cf2">3.2. Solutions</a>
+<ul>
+<li><a href="#org9546368">3.2.1. Mine</a></li>
+<li><a href="#org2e5c445">3.2.2. Rutledge 2</a></li>
 </ul>
 </li>
-<li><a href="#org6cebbd7">5. Problem 4: Largest palindrome product</a>
-<ul>
-<li><a href="#orgd873283">5.1. Process</a></li>
 </ul>
 </li>
-<li><a href="#org457bd6c">6. Initial Attempt</a></li>
+<li><a href="#org01ae9eb">4. Problem 3: Largest prime factor</a>
+<ul>
+<li><a href="#org305ed53">4.1. Solution</a></li>
+</ul>
+</li>
+<li><a href="#org9394e40">5. Problem 4: Largest palindrome product</a>
+<ul>
+<li><a href="#orgd6cfb86">5.1. Process</a></li>
+</ul>
+</li>
+<li><a href="#org320e593">6. Initial Attempt</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2f81a7c" class="outline-2">
-<h2 id="org2f81a7c"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org4d2c3bb" class="outline-2">
+<h2 id="org4d2c3bb"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Learn <a href="https://www.jsoftware.com/#/README">J</a> by solving <a href="https://projecteuler.net/about">Euler problems</a>.
 </p>
 </div>
 
-<div id="outline-container-orgd4fb02b" class="outline-3">
-<h3 id="orgd4fb02b"><span class="section-number-3">1.1</span> References</h3>
+<div id="outline-container-org01904fe" class="outline-3">
+<h3 id="org01904fe"><span class="section-number-3">1.1</span> References</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Found <a href="https://github.com/Ryan-Rutledge/ProjectEuler-J">Ryan Rutledge's solutions</a>.
@@ -341,8 +341,8 @@ Learning from them, but not copying!
 </p>
 </div>
 
-<div id="outline-container-org1b08acc" class="outline-4">
-<h4 id="org1b08acc"><span class="section-number-4">1.1.1</span> General J</h4>
+<div id="outline-container-orgcfd1cc8" class="outline-4">
+<h4 id="orgcfd1cc8"><span class="section-number-4">1.1.1</span> General J</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>Ch 2 <i>A J Introduction</i></li>
@@ -353,8 +353,8 @@ Learning from them, but not copying!
 </div>
 </div>
 
-<div id="outline-container-orgaf8fdb7" class="outline-4">
-<h4 id="orgaf8fdb7"><span class="section-number-4">1.1.2</span> Errors</h4>
+<div id="outline-container-orga98d0b7" class="outline-4">
+<h4 id="orga98d0b7"><span class="section-number-4">1.1.2</span> Errors</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li><a href="https://stackoverflow.com/questions/25496927/j-code-block-in-org-mode-returns-wrong-type-argument-listp-none">J code block in org-mode</a></li>
@@ -363,8 +363,8 @@ Learning from them, but not copying!
 </div>
 </div>
 
-<div id="outline-container-orgd048cfd" class="outline-3">
-<h3 id="orgd048cfd"><span class="section-number-3">1.2</span> Miscellaneous</h3>
+<div id="outline-container-orge46519c" class="outline-3">
+<h3 id="orge46519c"><span class="section-number-3">1.2</span> Miscellaneous</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Add <code>dissect</code> to output dissection in <code>j-mode</code>.
@@ -379,8 +379,8 @@ plot 1 <span style="color: #ff0000;">o.</span> 0<span style="color: #00ff00;">.<
 </div>
 </div>
 
-<div id="outline-container-orgf0f2f64" class="outline-2">
-<h2 id="orgf0f2f64"><span class="section-number-2">2</span> <a href="https://projecteuler.net/problem=1">Problem 1</a>: Multiples of 3 and 5</h2>
+<div id="outline-container-org56c0915" class="outline-2">
+<h2 id="org56c0915"><span class="section-number-2">2</span> <a href="https://projecteuler.net/problem=1">Problem 1</a>: Multiples of 3 and 5</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
@@ -389,13 +389,13 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 </p>
 </div>
 
-<div id="outline-container-orge4ba9ad" class="outline-3">
-<h3 id="orge4ba9ad"><span class="section-number-3">2.1</span> Process</h3>
+<div id="outline-container-org9f212b0" class="outline-3">
+<h3 id="org9f212b0"><span class="section-number-3">2.1</span> Process</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
 
-<div id="outline-container-orge573df0" class="outline-4">
-<h4 id="orge573df0"><span class="section-number-4">2.1.1</span> Found out how to <a href="https://stackoverflow.com/questions/2864835/how-to-filter-a-list-in-j">filter a list in J</a>.</h4>
+<div id="outline-container-org474efa2" class="outline-4">
+<h4 id="org474efa2"><span class="section-number-4">2.1.1</span> Found out how to <a href="https://stackoverflow.com/questions/2864835/how-to-filter-a-list-in-j">filter a list in J</a>.</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 Remove all elements of list which are not equal (<code>~:</code>) to 2:
@@ -405,6 +405,11 @@ Remove all elements of list which are not equal (<code>~:</code>) to 2:
 <pre class="src src-j">2 (<span style="color: #ff0000;">~:</span> <span style="color: #ff0000;">#</span> <span style="color: #ff0000;">]</span>) 3 2 2 7 7 2 9
 </pre>
 </div>
+
+<pre class="example">
+3 7 7 9
+</pre>
+
 
 <p>
 Dissection:
@@ -427,13 +432,18 @@ Three verbs in parenthesis <code>(~: # ])</code> forms a <b>fork</b> where all v
 </div>
 </div>
 
-<div id="outline-container-orgd22087a" class="outline-4">
-<h4 id="orgd22087a"><span class="section-number-4">2.1.2</span> Alternative filter</h4>
+<div id="outline-container-org159ff83" class="outline-4">
+<h4 id="org159ff83"><span class="section-number-4">2.1.2</span> Alternative filter</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <div class="org-src-container">
 <pre class="src src-j">3 2 2 7 7 2 9 <span style="color: #ff0000;">-.</span> 2
 </pre>
 </div>
+
+<pre class="example">
+3 7 7 9
+</pre>
+
 
 <dl class="org-dl">
 <dt><code>-.</code></dt><dd><i>less</i> removes everything from the left that is on the right.</dd>
@@ -441,8 +451,8 @@ Three verbs in parenthesis <code>(~: # ])</code> forms a <b>fork</b> where all v
 </div>
 </div>
 
-<div id="outline-container-org08ebda6" class="outline-4">
-<h4 id="org08ebda6"><span class="section-number-4">2.1.3</span> Strategy 1</h4>
+<div id="outline-container-org83b19eb" class="outline-4">
+<h4 id="org83b19eb"><span class="section-number-4">2.1.3</span> Strategy 1</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 Make the solution literal: find all elements which are divisible by 3 or 5.
@@ -467,11 +477,27 @@ Need to use
 </pre>
 </div>
 
+<pre class="example">
+1 2 0 1 2 0 1 2 0 1
+
+0 0 1 0 0 1 0 0 1 0
+
+0 0 1 0 0 1 0 0 1 0
+
+0 0 1 0 0 1 0 0 1 0
+</pre>
+
+
 <div class="org-src-container">
 <pre class="src src-J"><span style="color: #cae682;">a</span> <span style="color: #000000;">=.</span> <span style="color: #ff0000;">i.</span> 10
 <span style="color: #ff0000;">]</span>a
 </pre>
 </div>
+
+<pre class="example">
+0 1 2 3 4 5 6 7 8 9
+</pre>
+
 
 <p>
 We can then use a <a href="https://code.jsoftware.com/wiki/Vocabulary/hook">hook</a> to select using <code>#</code>
@@ -479,8 +505,8 @@ We can then use a <a href="https://code.jsoftware.com/wiki/Vocabulary/hook">hook
 </div>
 </div>
 
-<div id="outline-container-org72b5dec" class="outline-4">
-<h4 id="org72b5dec"><span class="section-number-4">2.1.4</span> Strategy 2</h4>
+<div id="outline-container-orga641a38" class="outline-4">
+<h4 id="orga641a38"><span class="section-number-4">2.1.4</span> Strategy 2</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <p>
 Use gcd!
@@ -496,22 +522,43 @@ Use gcd!
 <span style="color: #ff0000;">+</span><span style="color: #00ff00;">/</span> (<span style="color: #ff0000;">#</span><span style="color: #00ff00;">~</span> <span style="color: #ff0000;">-.</span><span style="color: #0000ff;">@:</span>(1<span style="color: #0000ff;">&amp;</span><span style="color: #ff0000;">=</span>)<span style="color: #0000ff;">@:</span>(15<span style="color: #0000ff;">&amp;</span><span style="color: #ff0000;">+.</span>)) 1<span style="color: #ff0000;">+i.</span>999
 </pre>
 </div>
+
+<pre class="example">
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+
+0 0 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1
+
+0 0 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1
+
+3 5 6 9 10 12 15 18 20 21 24 25 27 30 33 35 36 39 40
+
+3 5 6 9 10 12 15 18 20 21 24 25 27 30 33 35 36 39 40
+
+408
+
+233168
+</pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgfa1e224" class="outline-3">
-<h3 id="orgfa1e224"><span class="section-number-3">2.2</span> Solutions</h3>
+<div id="outline-container-org9c8d47b" class="outline-3">
+<h3 id="org9c8d47b"><span class="section-number-3">2.2</span> Solutions</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org74d5bd6" class="outline-4">
-<h4 id="org74d5bd6"><span class="section-number-4">2.2.1</span> Mine</h4>
+<div id="outline-container-org51b3ad4" class="outline-4">
+<h4 id="org51b3ad4"><span class="section-number-4">2.2.1</span> Mine</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <div class="org-src-container">
 <pre class="src src-j"><span style="color: #ff0000;">+</span><span style="color: #00ff00;">/</span> (<span style="color: #ff0000;">#</span><span style="color: #00ff00;">~</span> <span style="color: #ff0000;">-.</span><span style="color: #0000ff;">@:</span>(1<span style="color: #0000ff;">&amp;</span><span style="color: #ff0000;">=</span>)<span style="color: #0000ff;">@:</span>(15<span style="color: #0000ff;">&amp;</span><span style="color: #ff0000;">+.</span>)) <span style="color: #ff0000;">+i.</span>1000
 </pre>
 </div>
+
+<pre class="example">
+233168
+</pre>
+
 
 <dl class="org-dl">
 <dt><code>15&amp;+.</code></dt><dd>Find GCD of right noun with 15</dd>
@@ -532,8 +579,8 @@ If the GCD of 15 and \(n\) is 1, that means neither 3 or 5 factor \(n\).</dd>
 </div>
 </div>
 
-<div id="outline-container-orga0be76b" class="outline-4">
-<h4 id="orga0be76b"><span class="section-number-4">2.2.2</span> <a href="https://github.com/Ryan-Rutledge/ProjectEuler-J/blob/master/problem001.ijs">Rutledge</a></h4>
+<div id="outline-container-org29b1c1f" class="outline-4">
+<h4 id="org29b1c1f"><span class="section-number-4">2.2.2</span> <a href="https://github.com/Ryan-Rutledge/ProjectEuler-J/blob/master/problem001.ijs">Rutledge</a></h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 Really nice!
@@ -550,6 +597,11 @@ Really nice!
 </pre>
 </div>
 
+<pre class="example">
+233168
+</pre>
+
+
 
 <div class="figure">
 <p><img src="data/05/6dde50-2392-4492-bcab-024d1c8e0b20/clipboard-20200522-195114.png" alt="clipboard-20200522-195114.png" />
@@ -560,8 +612,8 @@ Really nice!
 </div>
 </div>
 
-<div id="outline-container-org4d70d01" class="outline-2">
-<h2 id="org4d70d01"><span class="section-number-2">3</span> <a href="https://projecteuler.net/problem=2">Problem 2</a>: Even Fibonacci numbers</h2>
+<div id="outline-container-org9d67cfc" class="outline-2">
+<h2 id="org9d67cfc"><span class="section-number-2">3</span> <a href="https://projecteuler.net/problem=2">Problem 2</a>: Even Fibonacci numbers</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be:
@@ -576,8 +628,8 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 </p>
 </div>
 
-<div id="outline-container-orgcdf726e" class="outline-3">
-<h3 id="orgcdf726e"><span class="section-number-3">3.1</span> Process</h3>
+<div id="outline-container-org855706b" class="outline-3">
+<h3 id="org855706b"><span class="section-number-3">3.1</span> Process</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Checked for Fibonacci sequence function and found <a href="https://code.jsoftware.com/wiki/Essays/Fibonacci_Sequence">Essays/Fibonacci Sequence</a>.
@@ -618,6 +670,17 @@ f0b<span style="color: #0000ff;">"</span>0 <span style="color: #ff0000;">i.</spa
 </pre>
 </div>
 
+<pre class="example">
+5
+
+8
+
+0 1 2 3
+
+0 1 1 2 3 5 8 13 21 34
+</pre>
+
+
 <dl class="org-dl">
 <dt><code>M.</code></dt><dd><i>memoization</i> makes <code>J</code> store previously computed values.</dd>
 <dt><code>^:</code></dt><dd><i>power</i> repeatedly applies the formula as long as the boolean condition on the RHS, <code>1&amp;&lt;</code>, is true.</dd>
@@ -646,15 +709,25 @@ f0b<span style="color: #0000ff;">"</span>0 <span style="color: #ff0000;">i.</spa
 <span style="color: #ff0000;">+</span><span style="color: #00ff00;">/</span> (3<span style="color: #ff0000;">*</span>(1<span style="color: #ff0000;">+i.</span>11)) <span style="color: #ff0000;">{</span> f0b<span style="color: #0000ff;">"</span>0 <span style="color: #ff0000;">i.</span>34
 </pre>
 </div>
+
+<pre class="example">
+0 1 1 2 3 5 8 13 21 34
+
+34
+
+2 8 34 144 610 2584 10946 46368 196418 832040 3524578
+
+4613732
+</pre>
 </div>
 </div>
 
-<div id="outline-container-org7cc2a59" class="outline-3">
-<h3 id="org7cc2a59"><span class="section-number-3">3.2</span> Solutions</h3>
+<div id="outline-container-org19a0cf2" class="outline-3">
+<h3 id="org19a0cf2"><span class="section-number-3">3.2</span> Solutions</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org96fd3dc" class="outline-4">
-<h4 id="org96fd3dc"><span class="section-number-4">3.2.1</span> Mine</h4>
+<div id="outline-container-org9546368" class="outline-4">
+<h4 id="org9546368"><span class="section-number-4">3.2.1</span> Mine</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <div class="org-src-container">
 <pre class="src src-j"><span style="color: #99968b;">NB. </span><span style="color: #99968b;">Definition of Fibonacci function</span>
@@ -667,11 +740,17 @@ f0b<span style="color: #0000ff;">"</span>0 <span style="color: #ff0000;">i.</spa
 <span style="color: #ff0000;">+</span><span style="color: #00ff00;">/</span> (3<span style="color: #ff0000;">*</span>(1<span style="color: #ff0000;">+i.</span>11)) <span style="color: #ff0000;">{</span> f0b<span style="color: #0000ff;">"</span>0 <span style="color: #ff0000;">i.</span>34
 </pre>
 </div>
+
+<pre class="example">
+34
+
+4613732
+</pre>
 </div>
 </div>
 
-<div id="outline-container-orgd054f2f" class="outline-4">
-<h4 id="orgd054f2f"><span class="section-number-4">3.2.2</span> <a href="https://github.com/Ryan-Rutledge/ProjectEuler-J/blob/master/problem002.ijs">Rutledge 2</a></h4>
+<div id="outline-container-org2e5c445" class="outline-4">
+<h4 id="org2e5c445"><span class="section-number-4">3.2.2</span> <a href="https://github.com/Ryan-Rutledge/ProjectEuler-J/blob/master/problem002.ijs">Rutledge 2</a></h4>
 <div class="outline-text-4" id="text-3-2-2">
 <div class="org-src-container">
 <pre class="src src-j"><span style="color: #ff0000;">+</span><span style="color: #00ff00;">/</span><span style="color: #ff0000;">}:</span>(<span style="color: #ff0000;">,</span>_2<span style="color: #0000ff;">&amp;</span><span style="color: #ff0000;">{+</span>4<span style="color: #ff0000;">*{:</span>)<span style="color: #0000ff;">^:</span>(4e6<span style="color: #ff0000;">&gt;{:</span>)<span style="color: #0000ff;">^:</span>_<span style="color: #ff0000;">[</span>2 8
@@ -691,13 +770,17 @@ f0b<span style="color: #0000ff;">"</span>0 <span style="color: #ff0000;">i.</spa
 <span style="color: #99968b;">NB. </span><span style="color: #99968b;">+/          Sum of list items</span>
 </pre>
 </div>
+
+<pre class="example">
+4613732
+</pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga4a758b" class="outline-2">
-<h2 id="orga4a758b"><span class="section-number-2">4</span> <a href="https://projecteuler.net/problem=3">Problem 3</a>: Largest prime factor</h2>
+<div id="outline-container-org01ae9eb" class="outline-2">
+<h2 id="org01ae9eb"><span class="section-number-2">4</span> <a href="https://projecteuler.net/problem=3">Problem 3</a>: Largest prime factor</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The prime factors of 13195 are 5, 7, 13 and 29.
@@ -708,14 +791,21 @@ What is the largest prime factor of the number 600851475143 ?
 </p>
 </div>
 
-<div id="outline-container-org7750580" class="outline-3">
-<h3 id="org7750580"><span class="section-number-3">4.1</span> Solution</h3>
+<div id="outline-container-org305ed53" class="outline-3">
+<h3 id="org305ed53"><span class="section-number-3">4.1</span> Solution</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-j">  <span style="color: #ff0000;">q:</span> 600851475143
 <span style="color: #ff0000;">{:</span> <span style="color: #ff0000;">q:</span> 600851475143
 </pre>
 </div>
+
+<pre class="example">
+71 839 1471 6857
+
+6857
+</pre>
+
 
 <dl class="org-dl">
 <dt><code>q:</code></dt><dd><i>prime factorization</i></dd>
@@ -729,8 +819,8 @@ Rutledge has <a href="https://github.com/Ryan-Rutledge/ProjectEuler-J/blob/maste
 </div>
 </div>
 
-<div id="outline-container-org6cebbd7" class="outline-2">
-<h2 id="org6cebbd7"><span class="section-number-2">5</span> <a href="https://projecteuler.net/problem=4">Problem 4</a>: Largest palindrome product</h2>
+<div id="outline-container-org9394e40" class="outline-2">
+<h2 id="org9394e40"><span class="section-number-2">5</span> <a href="https://projecteuler.net/problem=4">Problem 4</a>: Largest palindrome product</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 A palindromic number reads the same both ways.
@@ -742,8 +832,8 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 </p>
 </div>
 
-<div id="outline-container-orgd873283" class="outline-3">
-<h3 id="orgd873283"><span class="section-number-3">5.1</span> Process</h3>
+<div id="outline-container-orgd6cfb86" class="outline-3">
+<h3 id="orgd6cfb86"><span class="section-number-3">5.1</span> Process</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-j"><span style="color: #ff0000;">|.</span> <span style="color: #ff0000;">i.</span> 5
@@ -752,12 +842,23 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 <span style="color: #ff0000;">+</span> <span style="color: #ff0000;">|.</span> <span style="color: #ff0000;">":</span> 4858
 </pre>
 </div>
+
+<pre class="example">
+4 3 2 1 0
+
+olleh
+
+4858
+
+|domain error
+|       +|.":4858
+</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org457bd6c" class="outline-2">
-<h2 id="org457bd6c"><span class="section-number-2">6</span> Initial Attempt</h2>
+<div id="outline-container-org320e593" class="outline-2">
+<h2 id="org320e593"><span class="section-number-2">6</span> Initial Attempt</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <a href="file:///home/cog/src/euler/euler.j">source</a>
@@ -806,13 +907,85 @@ a <span style="color: #ff0000;">*.</span>table a
 <span style="color: #99968b;">NB. </span><span style="color: #99968b;">https://stackoverflow.com/questions/2864835/how-to-filter-a-list-in-j</span>
 </pre>
 </div>
+
+<pre class="example">
+12
+
+60
+
+9 16 25
+
+1 0 0
+
+20
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+0.333333 0.666667 1 1.33333 1.66667 2 2.33333 2.66667 3 3.33333 3.66667 4 4.33333 4.66667 5 5.33333 5.66667 6 6.33333 6.66667
+
+0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6
+
+0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6
+
+0.333333 0.666667 1 1.33333 1.66667 2 2.33333 2.66667 3 3.33333 3.66667 4 4.33333 4.66667 5 5.33333 5.66667 6 6.33333 6.66667
+
+0
+
+0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6
+
+0.333333 0.333333 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111 0.1 0.0909091 0.0833333 0.0769231 0.0714286 0.0666667 0.0625 0.0588235 0.0555556 0.0526316 0.05
+
+0.333333 0.333333 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111 0.1 0.0909091 0.0833333 0.0769231 0.0714286 0.0666667 0.0625 0.0588235 0.0555556 0.0526316 0.05
+
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+
+1 0.5 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111 0.1 0.0909091 0.0833333 0.0769231 0.0714286 0.0666667 0.0625 0.0588235 0.0555556 0.0526316 0.05
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+|limit error
+|   3 5|a    $2
+
+1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2
+1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0
+
+┌──┬──────────────────────────────────────────────────────────────────────────┐
+│*.│ 1  2  3  4  5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20│
+├──┼──────────────────────────────────────────────────────────────────────────┤
+│ 1│ 1  2  3  4  5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20│
+│ 2│ 2  2  6  4 10   6  14   8  18  10  22  12  26  14  30  16  34  18  38  20│
+│ 3│ 3  6  3 12 15   6  21  24   9  30  33  12  39  42  15  48  51  18  57  60│
+│ 4│ 4  4 12  4 20  12  28   8  36  20  44  12  52  28  60  16  68  36  76  20│
+│ 5│ 5 10 15 20  5  30  35  40  45  10  55  60  65  70  15  80  85  90  95  20│
+│ 6│ 6  6  6 12 30   6  42  24  18  30  66  12  78  42  30  48 102  18 114  60│
+│ 7│ 7 14 21 28 35  42   7  56  63  70  77  84  91  14 105 112 119 126 133 140│
+│ 8│ 8  8 24  8 40  24  56   8  72  40  88  24 104  56 120  16 136  72 152  40│
+│ 9│ 9 18  9 36 45  18  63  72   9  90  99  36 117 126  45 144 153  18 171 180│
+│10│10 10 30 20 10  30  70  40  90  10 110  60 130  70  30  80 170  90 190  20│
+│11│11 22 33 44 55  66  77  88  99 110  11 132 143 154 165 176 187 198 209 220│
+│12│12 12 12 12 60  12  84  24  36  60 132  12 156  84  60  48 204  36 228  60│
+│13│13 26 39 52 65  78  91 104 117 130 143 156  13 182 195 208 221 234 247 260│
+│14│14 14 42 28 70  42  14  56 126  70 154  84 182  14 210 112 238 126 266 140│
+│15│15 30 15 60 15  30 105 120  45  30 165  60 195 210  15 240 255  90 285  60│
+│16│16 16 48 16 80  48 112  16 144  80 176  48 208 112 240  16 272 144 304  80│
+│17│17 34 51 68 85 102 119 136 153 170 187 204 221 238 255 272  17 306 323 340│
+│18│18 18 18 36 90  18 126  72  18  90 198  36 234 126  90 144 306  18 342 180│
+│19│19 38 57 76 95 114 133 152 171 190 209 228 247 266 285 304 323 342  19 380│
+│20│20 20 60 20 20  60 140  40 180  20 220  60 260 140  60  80 340 180 380  20│
+└──┴──────────────────────────────────────────────────────────────────────────┘
+
+0 5 8 3 4 1 7 6 2
+</pre>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-05-22 Fri 16:09</p>
 <p class="author">Author: Çağlar Girit</p>
-<p class="date">Created: 2020-05-28 Thu 16:47</p>
+<p class="date">Created: 2020-05-28 Thu 17:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
