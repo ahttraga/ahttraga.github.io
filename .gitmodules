@@ -1,0 +1,3 @@
+[submodule "mdwiki"]
+	path = mdwiki
+	url = git@github.com:ahttraga/mdwiki-seed
